@@ -28,6 +28,7 @@ AWS_SECRET_KEY=9S....
 
 The next thing you have to do, is to define our maven repository to your top-level gradle file. Find the “allprojects” code block and on “repositories” add the following lines:
 
+```java
 maven {
     url "s3://adnomus-maven-repo.adnomus.com/releases"
     credentials(AwsCredentials) {
@@ -35,6 +36,7 @@ maven {
         secretKey AWS_SECRET_KEY
     }
 }
+```
 
 Finally, on the other gradle file on “dependencies” area add the “compile” command: 
 
@@ -51,6 +53,7 @@ misuses the sdk,  she/he can see the errors on the console). In release mode, no
 
 To use the debug version you need to add the “snapshots” directory to your top-level gradle instead.
 
+```java
 maven {
     url "s3://adnomus-maven-repo.adnomus.com/snapshots"
     credentials(AwsCredentials) {
@@ -58,7 +61,7 @@ maven {
         secretKey AWS_SECRET_KEY
     }
 }
-
+```
 
 
 CREATE A STANDARD AD (example)
@@ -68,6 +71,7 @@ To create a standard ad, you firstly need to have a WebView widget to your layou
 
 This is an example of a StandardAd implementation: 
 
+```java
 /*Creating an AdNomucControl object and setting all the necessary informations to it. */
 AdNomusControl adNomusControl = AdNomusControl.sharedInstance(getActivity());
 adNomusControl.initialize("test_customer", "666xfe", "test_app", "test_user");
@@ -77,7 +81,7 @@ adNomusControl.setNationality("Martian");
 /*Get the view (given the user's message, the type and the size) and set it to the webview.
 * You can also set this to a layout but it possibly cause some render errors*/
 webview.addView(adNomusControl.getStandardWebViewFromContent(message.getText().toString(), AdNomusControl.AdType.standard, AdNomusControl.AdSize.size_300x250));
-
+```
 
 CREATE A CONTEXT AD (example)
 ------------
@@ -104,6 +108,7 @@ public void onContextReady(final AdContext adContext) {
 }
 ```
 Finally you need to go on your Activity (where you want to see the ads), and create an AdNomusControl object setting all the necessary information like the following example: 
+```java
 /*Creating an AdNomucControl object and setting all the necessary information to it. */
 adNomusControl = AdNomusControl.sharedInstance(getActivity());
 adNomusControl.initialize("test_customer", "666xfe", "test_app", "test_user");
@@ -113,12 +118,14 @@ adNomusControl.setNationality("Martian");
 /*Creating also a ContextManager instance  and pass it throught the getAdContextFromContent method*/
 ContextManager contextManager = new ContextManager(getActivity());
 adNomusControl.getAdContextFromContent(message.getText().toString(), AdNomusControl.AdType.standard, AdNomusControl.AdSize.size_300x250, contextManager);
+```
  
 CREATE A NATIVE AD (example)
 ------------
 
 Like ContextAd, to create a native ad you need a “manager” class first. You can call it NativeAdManager and it needs to implement AdNomusNativeListener. In here you need to overwrite the didReceiveAdResponse method, take the image using nativeAd.getId().getImageUrl() and add it to an ImageView this time. For example: 
 
+```java
 @Override
 public void didReceiveAdResponse(final NativeAd nativeAd) {
     this.nativeAd = nativeAd;
@@ -144,8 +151,10 @@ public void didReceiveAdResponse(final NativeAd nativeAd) {
         }
     });
 }
+```
 After that you need to create an AdNomusControl object on your Activity  (where you want to see the ads) setting all the necessary information like the following example:
 
+```java
 /*Creating an AdNomucControl object and setting all the necessary information to it. */
 AdNomusControl adNomusControl = AdNomusControl.sharedInstance(getActivity());
 adNomusControl.initialize("test_customer", "666xfe", "test_app", "test_user");
@@ -155,7 +164,7 @@ adNomusControl.setNationality("Martian");
 nativeAdManager = new NativeAdManager(getActivity());
 /*Creating also a NativeAdManager instance  and pass it throught the getNativeAdFromContent method*/
 adNomusControl.getNativeAdFromContent(message.getText().toString(), AdNomusControl.AdType.standard, AdNomusControl.AdSize.size_300x250, nativeAdManager);
-
+```
 
 NOTES
 ------------
