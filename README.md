@@ -169,5 +169,5 @@ adNomusControl.getNativeAdFromContent(message.getText().toString(), AdNomusContr
 NOTES
 ------------
 
-Markup : *  If you don't have the adNomus credentials you'll be able to see only sample ad images.
-Markup : * You don't have to use “setNationality”, “setAge” etc methods in every ad request. The best strategy is to set these values only one time for every user. These information is stored in our database. 
+* If you don't have the adNomus credentials you'll be able to see only sample ad images.
+* You don't have to use “setNationality”, “setAge” etc methods in every ad request. The best strategy is to set these values only one time for every user. These information is stored in our database. 
