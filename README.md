@@ -84,6 +84,7 @@ CREATE A CONTEXT AD (example)
 
 To create a Context ad we need to create a ContextManager class first which implements the AdNomusContextListener. You need to implement the onContextReady method and run a UI thread there setting up the WebView. You can do this as the following example: 
 
+```java
 @Override
 public void onContextReady(final AdContext adContext) {
     appContext.runOnUiThread(new Runnable() {
@@ -101,6 +102,7 @@ public void onContextReady(final AdContext adContext) {
         }
     });
 }
+```
 Finally you need to go on your Activity (where you want to see the ads), and create an AdNomusControl object setting all the necessary information like the following example: 
 /*Creating an AdNomucControl object and setting all the necessary information to it. */
 adNomusControl = AdNomusControl.sharedInstance(getActivity());
