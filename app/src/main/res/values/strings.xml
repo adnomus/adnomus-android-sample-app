@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DemoApp</string>
+    <string name="standard_activity">STANDARD</string>
+    <string name="native_activity">NATIVE</string>
+    <string name="context_activity">CONTEXT</string>
+    <string name="provide"> Please provide your message </string>
+    <string name="delivered"> Delivered Ad </string>
+</resources>

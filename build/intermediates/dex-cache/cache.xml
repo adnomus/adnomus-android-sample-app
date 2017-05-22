@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/kaftanis/Dropbox/LFT-SummerFinal/DemoApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1a3eb6e4e92395ca20ced2ce3103df5ebfb68d18">
+        <dex dex="/home/kaftanis/Dropbox/LFT-SummerFinal/DemoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_75c5c21eee30adc20d171dc7cdf635400f1a9f99/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/kaftanis/.android/build-cache/c89edaeec872e16d382d4e54b6be1ee6669b0105/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="eadaf05edc644de755b7500ee968117eef529c93">
+        <dex dex="/home/kaftanis/Dropbox/LFT-SummerFinal/DemoApp/app/build/intermediates/pre-dexed/release/classes_6a554d077d043b87c9a1400a04afd813714d4cc8.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/kaftanis/Dropbox/LFT-SummerFinal/DemoApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/home/kaftanis/Dropbox/LFT-SummerFinal/DemoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_40e7e919be01ff21d4cbd216f6f52fe4bae2af2c/classes.dex" />
+    </item>
+
+</items>
